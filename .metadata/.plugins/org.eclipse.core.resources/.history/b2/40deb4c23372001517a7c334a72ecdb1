@@ -1,0 +1,61 @@
+package string_calculator;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class StringCalculator {
+	
+	
+	public int splitAdd(String str){
+		
+		int result = 0;
+		
+		if(str == ""){
+			System.out.println("out");
+			return 0;
+		}
+		
+		String[] numbers=str.split(",|;");
+	
+		result = addNumbersInArr(numbers);
+	
+		return result; 
+	}
+	
+	public int divideCustom(String str){
+	
+		int result =0;
+		
+		Matcher m = Pattern.compile("//(.)\n(.*)").matcher(str);
+		m.find();
+		
+		String customDelimeter = m.group(1);
+		String[] tokens=m.group(2).split(customDelimeter);
+		
+		result = addNumbersInArr(tokens);
+		
+		return result;
+		
+		
+	}
+	
+	public int addNumbersInArr(String[] numbers){
+		
+		int result = 0;
+		int currentNumber = 0; 
+		
+		for(int i=0; i<numbers.length; i++)
+		{
+			currentNumber = Integer.parseInt(numbers[i]);
+			if(currentNumber < 0 ){
+				throw new RuntimeException();
+			}
+			
+			result += currentNumber;
+		}
+		
+		return result;
+	}
+	
+
+}

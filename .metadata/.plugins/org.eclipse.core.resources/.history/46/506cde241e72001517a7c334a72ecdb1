@@ -1,0 +1,16 @@
+package calculator;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CaculatorTest {
+
+	@Test
+	public void testAdd() {
+		Calculator cal = new Calculator();
+		int result = cal.add(3, 4);
+		assertEquals(7, result);
+	}
+
+}

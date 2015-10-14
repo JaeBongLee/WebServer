@@ -1,0 +1,20 @@
+package string_calculator;
+
+public class StringCalculator {
+	
+	public int splitAdd(String str){
+		
+		int result = 0;
+		int i;
+		String[] numbers=str.split(",");
+		
+		for(i=0; i<numbers.length; i++)
+		{
+			result += Integer.parseInt(numbers[i]);
+		}
+		
+		return result; 
+	}
+	
+
+}

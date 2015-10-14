@@ -1,0 +1,29 @@
+package calculator;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CaculatorTest {
+
+	@Test
+	public void testAdd() {
+		Calculator cal = new Calculator();
+		int result = cal.add(3, 4);
+		assertEquals(7, result);
+	}
+	
+	@Test
+	public void textDivide() throws Exception {
+		Calculator cal = new Calculator();
+		int result = cal.divide(12, 4);
+		assertEquals(3, result);
+	}
+
+	@Test
+	public void testMulti() throws Exception {
+		Calculator cal = new Calculator();
+		int result = cal.multi(12, 4);
+		assertEquals(3, result);
+	}
+}

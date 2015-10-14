@@ -1,0 +1,32 @@
+package string_calculator;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class StringCalculatorTest {
+
+	StringCalculator stringCal;
+	
+	@Before
+	public void setup(){
+		stringCal = new StringCalculator();
+	}
+	
+	@Test
+	public void testMutiNumber() {
+		int result;
+		
+		result = stringCal.splitAdd("1,4,3,2");
+		assertEquals(10,result);
+	}
+	
+	@Test
+	public void add_빈공백문자() {
+		int result = stringCal.splitAdd("");
+		assertEquals(0,result);
+	}
+	
+
+}

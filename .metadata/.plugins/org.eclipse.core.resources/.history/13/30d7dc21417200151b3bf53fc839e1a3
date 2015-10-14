@@ -1,0 +1,67 @@
+package string_calculator;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class StringCalculator {
+	
+	
+	public int addInnberTextNum(String text){
+		
+		if(text.isEmpty()){
+			return 0;
+		}
+		
+		String[] tokens = text.split(",|;");
+	
+		return addNumbers(stringToInt(tokens));
+	}
+	
+	public int addNumbers(int[] numbers){
+		
+		int result = 0;
+		
+		for(int i=0; i<numbers.length; i++)
+		{
+			result += numbers[i];
+		}
+		
+		return result;
+	}
+	
+	private int[] stringToInt(String[] values){
+		int[] numbers = new int[values.length];
+		
+		for(int i = 0 ; i < values.length;i++){
+			numbers[i] = Integer.parseInt(values[i]);
+			checkNegativeNumber(numbers[i]);
+		}
+		
+		return numbers;
+	}
+		
+	public void checkNegativeNumber(int num){
+		if(num < 0 ){
+			throw new RuntimeException();
+		}
+	}
+	
+	public int divideCustom(String str){
+		
+		int result =0;
+		
+		Matcher m = Pattern.compile("//(.)\n(.*)").matcher(str);
+		m.find();
+		
+		String customDelimeter = m.group(1);
+		String[] tokens=m.group(2).split(customDelimeter);
+		int[] numbers = stringToInt(tokens);
+		
+		result = addNumbers(numbers);
+		
+		return result;
+		
+		
+	}
+	
+}
