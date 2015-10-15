@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class StringCalculator {
 	
 	
-	public int addNumberInString(String text){
+	public int addInnberTextNum(String text){
 		
 		if(text.isEmpty()){
 			return 0;
@@ -15,7 +15,7 @@ public class StringCalculator {
 		String[] tokens = text.split(",|;");
 	
 		return addNumbers(stringToInt(tokens));
-	}
+	}ndr
 	public int addNumbers(int[] numbers){
 		
 		int result = 0;

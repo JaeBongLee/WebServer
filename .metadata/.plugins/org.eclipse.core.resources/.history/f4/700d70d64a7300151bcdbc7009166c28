@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class StringCalculator {
 	
 	
-	public int addNumberInString(String text){
+	public int addInnberTextNum(String text){
 		
 		if(text.isEmpty()){
 			return 0;
