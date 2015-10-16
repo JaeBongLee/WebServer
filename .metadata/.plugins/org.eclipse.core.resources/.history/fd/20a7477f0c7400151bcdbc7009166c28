@@ -1,0 +1,36 @@
+
+public class TextCalculator {
+
+	public int addText(String text) {
+		if(text.isEmpty()){
+			return 0;
+		}
+		
+		return addIntArrayNumbers(toIntArray(splitByComma(text)));
+	}
+	
+	public String[] splitByComma(String text){
+		return text.split(","); 
+			
+	}
+	
+	public int[] toIntArray(String[] textNumArr){
+		int[] intArr = new int[textNumArr.length];
+		
+		for(int i = 0 ; i < textNumArr.length ; i++){
+			intArr[i] = Integer.parseInt(textNumArr[i]);
+		}
+		
+		return intArr;
+	}
+	
+	public int addIntArrayNumbers(int[] intArr){
+		int result = 0;
+		for (int i : intArr) {
+			result += i;
+		}
+		return result;
+	}
+	
+
+}

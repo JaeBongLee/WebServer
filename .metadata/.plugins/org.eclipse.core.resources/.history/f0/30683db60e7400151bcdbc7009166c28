@@ -1,0 +1,31 @@
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class TextCalculatorTest {
+
+	
+	TextCalculator textCalculator;
+	
+	@Before
+	public void setup(){
+		textCalculator = new TextCalculator();
+	}
+	
+	@Test
+	public void add_empty(){
+		assertEquals(0,textCalculator.addText(""));
+	}
+	
+	@Test
+	public void add_oneNumber(){
+		assertEquals(1, textCalculator.addText("1"));
+	}
+	
+	@Test
+	public void add_splitByComma(){
+		assertEquals(3,textCalculator.addText("1,2"));
+	}
+
+}

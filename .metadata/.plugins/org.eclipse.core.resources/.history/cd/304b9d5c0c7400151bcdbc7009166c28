@@ -1,0 +1,11 @@
+
+public class TextCalculator {
+
+	public int add(String text) {
+		if(text.isEmpty()){
+			return 0;
+		}
+		return Integer.parseInt(text);
+	}
+
+}

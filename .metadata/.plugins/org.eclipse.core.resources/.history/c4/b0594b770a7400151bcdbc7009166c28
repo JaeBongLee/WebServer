@@ -1,0 +1,17 @@
+import org.junit.Before;
+import org.junit.Test;
+
+public class TextCalculatorTest {
+
+	
+	@Before
+	public void setup(){
+		
+	}
+	
+	@Test
+	public void emptyTextTest(String text){
+		
+	}
+
+}
